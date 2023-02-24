@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #ff216d, #2196f3);
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuToggle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 70px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuToggle::before {
+  content: "+";
+  position: absolute;
+  font-size: 3em;
+  font-size: 200;
+  color: #ff216d;
+  transform: 1.5s;
+}
+
+.menuToggle.active::before {
+  transform: rotate(225deg);
+  transition-duration: 0.8s;
+}
+
+.menu {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 70px;
+  z-index: -1;
+  transition: transform 0.5s, width 0.5s, height 0.5s;
+  transition-delay: 1s, 0.5s, 0.5s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menuToggle.active ~ .menu {
+  width: 240px;
+  height: 70px;
+  z-index: 1;
+  transform: translateY(-100px);
+  transition-delay: 0s, 0.5s, 0.5s;
+}/*# sourceMappingURL=style.css.map */
